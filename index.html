@@ -1,11 +1,21 @@
 <html>
-  <head>
+
+<head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <a-scene>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+        <a-assets>
+            <img id="ground" src="Textures/green_texture_2.jpeg">
+            <img id="sky" src="Textures/A-Frame_sky-01.png"></a-assets>
+        <a-camera>
+            <a-entity data-aframe-default-light="" aframe-injected="" position=""></a-entity>
+            <a-cursor></a-cursor>
+        </a-camera>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
     </a-scene>
-  </body>
+</body>
+
 </html>
