@@ -9,8 +9,14 @@
         <a-assets>
             <a-asset-item id="city" src="Assets/lego_city_vr/scene.gltf"></a-asset-item>
             <a-asset-item id="hello" src="Assets/speech_bubble_02/scene.gltf"></a-asset-item>
+            <a-asset-item id="man" src="Assets/lego_low_poly/lego_man_basic/scene.gltf"></a-asset-item>
             <img id="ground" src="Textures/thumb2-green-lego-texture-4k-macro-green-dots-background-lego.jpg">
             <img id="sky" src="Textures/A-Frame_sky.png">
+            <img id="blue" src="Textures/lightBlue.jpg">
+            <img id="red" src="Textures/red.jpg">
+            <img id="yellow" src="Textures/yellow.jpg">
+            <img id="green" src="Textures/green.jpg">
+            <img id="logo_old" src="Textures/old_lego_logo.jpg">
         </a-assets>
         <a-camera>
             <a-entity data-aframe-default-light="" aframe-injected="" position=""></a-entity>
@@ -18,7 +24,21 @@
         </a-camera>
         <a-plane data-brackets-id="25" position="0 0 -4" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
         <a-plane data-brackets-id="54" position="0 0 -11.22927" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
+        <a-plane data-brackets-id="370" position="0 0 -18.32344" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
+        <a-plane data-brackets-id="411" position="0 0 -25.54663" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
+        <a-box data-brackets-id="687" position="-3.20111 5.0935 -6.42084" rotation="" src="#blue" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.6; dir: alternate; dur: 3000; loop: NaN"></a-box>
+        <a-box data-brackets-id="767" position="-3.20111 6.07623 -6.42084" rotation="" src="#red" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 1; dir: alternate; dur: 3000; loop: NaN"></a-box>
+        <a-box data-brackets-id="454" position="-3.20111 0.20309 -6.42084" rotation="" src="#yellow" material="" geometry="" scale="0.4 0.4 0.4"></a-box>
+        <a-box data-brackets-id="995" position="3.226 6.1328 -7.51912" rotation="" src="#yellow" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.2; dir: alternate; dur: 4000; loop: NaN"></a-box>
+        <a-box data-brackets-id="996" position="2.82643 4.97969 -7.51912" rotation="" src="#blue" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.2; dir: alternate; dur: 4000; loop: NaN"></a-box>
+        <a-box data-brackets-id="967" position="2.42013 3.51056 -7.51912" rotation="" src="#red" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.2; dir: alternate; dur: 4000; loop: NaN"></a-box>
+        <a-box data-brackets-id="1182" position="2.63000 7.1111 -7.51912" rotation="" src="#green" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.6; dir: alternate; dur: 4250; loop: NaN">></a-box>
+        <a-box data-brackets-id="1177" position="3.01111 8.40000 -7.51912" rotation="" src="#yellow" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.6; dir: alternate; dur: 4250; loop: NaN"></a-box>
+        <a-box data-brackets-id="1177" position="2.80000 9.11111 -7.51912" rotation="" src="#blue" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 1; dir: alternate; dur: 4500; loop: NaN"></a-box>
         <a-entity data-brackets-id="182" position="-1.96353 1.37145 -2.38632" rotation="0 41.72 0" gltf-model="Assets/speech_bubble_02/scene.gltf" scale="0.002 0.002 0.002"></a-entity>
+        <a-entity data-brackets-id="413" position="-4.07341 0.05217 -24.14392" rotation="" gltf-model="Assets/lego_city_vr/scene.gltf" scale="0.02 0.02 0.02"></a-entity>
+        <a-entity data-brackets-id="1645" position="-3.07303 0 -7.8964" rotation="0 210.00000000000003 0" gltf-model="Assets/lego_low_poly/lego_man_basic/scene.gltf" scale="0.2 0.2 0.2"></a-entity>
+        <a-box position="" rotation="" src="#logo_old"></a-box>
         <a-sky src="#sky"></a-sky>
     </a-scene>
 </body></html>
