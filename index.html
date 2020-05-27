@@ -18,6 +18,25 @@
                 });
             }
         });
+
+    </script>
+    <script>
+        AFRAME.registerComponent('go-stop', {
+            init: function() {
+                var myVideo = document.querySelector('#dataViz1');
+                var videoControls = document.querySelector('#videoControls2');
+                this.el.addEventListener('click', function() {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#go');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#stop');
+                    }
+                });
+            }
+        });
+
     </script>
 </head>
 
@@ -52,6 +71,7 @@
             <img id="press" src="Textures/press_here-01.png">
             <audio id="city_sound" src="sound/City%20sound%20effect%201%20-%20downtown.mp3" preload="auto"></audio>
             <video id="dataViz" loop="true" src="video/Lego%20Data%20Vis.mp4"></video>
+            <video id="dataViz1" loop="true" src="video/Lego_bar_graph%20copy.mp4"></video>
         </a-assets>
         <a-camera>
             <a-entity data-aframe-default-light="" aframe-injected="" position=""></a-entity>
@@ -59,6 +79,10 @@
         </a-camera>
         <a-video data-brackets-id="473" src="#dataViz" width="8" height="8" position="7.34449 5.3382 -45.63699" material="" geometry="" scale="0.5 0.5 0.5" rotation="0 -57.220000000000006 0">
             <a-image data-brackets-id="474" id="videoControls" src="#press" position="-0.08164 -4.74262 0" scale="2 2 2.5" play-pause="" material="" geometry="">
+            </a-image>
+        </a-video>
+      <a-video data-brackets-id="5021" src="#dataViz1" width="8" height="8" position="9.00204 2.90551 -26.96309" material="" geometry="" scale="0.5 0.5 0.5" rotation="0 -57.220000000000006 0">
+            <a-image data-brackets-id="5022" id="videoControls2" src="#press" position="-0.08164 -4.74262 0" scale="2 2 2.5" go-stop="" material="" geometry="">
             </a-image>
         </a-video>
         <a-plane data-brackets-id="25" position="0 0 -4" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
@@ -163,6 +187,10 @@
         <a-box data-brackets-id="1901" position="3.19653 1.61017 -31.44665" rotation="0 90 0" src="Textures/lego_minecraft-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
         <a-box data-brackets-id="1901" position="-6.36158 1.6889 -32.44079" rotation="" src="Textures/tree-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
         <a-box data-brackets-id="1901" position="-8.01598 1.6889 -44.11743" rotation="0 270 0" src="Textures/clever-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
+        <a-box data-brackets-id="4382" position="-8.62187 0.48254 -40.70329" rotation="0 140 0" src="Textures/wood.jpg" material="" geometry="" scale="0.33 2.7 0.22"></a-box>
+        <a-box data-brackets-id="4383" position="-8.59245 2.58962 -40.67083" rotation="0 140 0" src="Textures/E_SDG%20goals_icons-individual-rgb-13.png" material="" geometry="" scale="0.11 1.5 1.5"></a-box>
         <a-sky src="#sky"></a-sky>
     </a-scene>
-</body></html>
+</body>
+
+</html>
