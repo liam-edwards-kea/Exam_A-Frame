@@ -2,6 +2,23 @@
 
 <head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('play-pause', {
+            init: function() {
+                var myVideo = document.querySelector('#dataViz');
+                var videoControls = document.querySelector('#videoControls');
+                this.el.addEventListener('click', function() {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#pause');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -23,6 +40,7 @@
             <a-asset-item id="fence" src="Assets/lowpoly_fence_free/scene.gltf"></a-asset-item>
             <a-asset-item id="tractor" src="Assets/9393-_technic-_tractor/scene.gltf"></a-asset-item>
             <a-asset-item id="sign" src="Assets/sign_post_model/scene.gltf"></a-asset-item>
+            <a-asset-item id="tree2" src="Assets/lego_puppet_walking_around_a_tree/scene.gltf"></a-asset-item>
             <img id="ground" src="Textures/thumb2-green-lego-texture-4k-macro-green-dots-background-lego.jpg">
             <img id="sky" src="Textures/A-Frame_sky.png">
             <img id="blue" src="Textures/lightBlue.jpg">
@@ -31,11 +49,18 @@
             <img id="green" src="Textures/green.jpg">
             <img id="logo_old" src="Textures/old_lego_logo.jpg">
             <img id="logo_old2" src="Textures/1954_lego_logo.jpg">
+            <img id="press" src="Textures/press_here-01.png">
+            <audio id="city_sound" src="sound/City%20sound%20effect%201%20-%20downtown.mp3" preload="auto"></audio>
+            <video id="dataViz" loop="true" src="video/Lego%20Data%20Vis.mp4"></video>
         </a-assets>
         <a-camera>
             <a-entity data-aframe-default-light="" aframe-injected="" position=""></a-entity>
             <a-cursor></a-cursor>
         </a-camera>
+        <a-video data-brackets-id="473" src="#dataViz" width="8" height="8" position="7.34449 5.3382 -45.63699" material="" geometry="" scale="0.5 0.5 0.5" rotation="0 -57.220000000000006 0">
+            <a-image data-brackets-id="474" id="videoControls" src="#press" position="-0.08164 -4.74262 0" scale="2 2 2.5" play-pause="" material="" geometry="">
+            </a-image>
+        </a-video>
         <a-plane data-brackets-id="25" position="0 0 -4" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
         <a-plane data-brackets-id="54" position="0 0 -11.22927" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
         <a-plane data-brackets-id="370" position="0 0 -18.32344" rotation="-90 0 0" width="4" height="4" src="#ground" color="#7BC8A4" material="" geometry="" scale="1.84 1.81 1.61"></a-plane>
@@ -73,16 +98,19 @@
         <a-box data-brackets-id="996" position="-2.56925 8.01468 -10.99034" rotation="" src="#blue" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.2; dir: alternate; dur: 5000; loop: NaN"></a-box>
         <a-box data-brackets-id="967" position="-2.16592 6.65252 -10.98781" rotation="" src="#red" material="" geometry="" scale="0.4 0.4 0.4" animation="property: object3D.position.y; to: 0.2; dir: alternate; dur: 5000; loop: NaN"></a-box>
         <a-entity data-brackets-id="182" position="-1.96353 1.37145 -2.38632" rotation="0 41.72 0" gltf-model="Assets/speech_bubble_02/scene.gltf" scale="0.002 0.002 0.002"></a-entity>
-        <a-entity data-brackets-id="413" position="-2.69827 0.06696 -24.14392" rotation="" gltf-model="Assets/lego_city_vr/scene.gltf" scale="0.02 0.02 0.02"></a-entity>
+        <a-entity data-brackets-id="973" position="-2.69827 0.06696 -24.14392" rotation="" gltf-model="Assets/lego_city_vr/scene.gltf" scale="0.02 0.02 0.02"</a-entity>
         <a-entity data-brackets-id="60" position="-2.58935 0 -7.8964" rotation="0 210.00000000000003 0" gltf-model="Assets/lego_low_poly/lego_man_basic/scene.gltf" scale="0.2 0.2 0.2"></a-entity>
         <a-entity position="1.92664 0 -10.24671" rotation="" gltf-model="Assets/the_artist/scene.gltf" scale="0.125 0.125 0.125"></a-entity>
         <a-entity position="-2.56606 0.4354 -15.64552" rotation="0 200 0" gltf-model="Assets/lego_car_model/scene.gltf" scale="0.2 0.2 0.2"></a-entity>
         <a-entity data-brackets-id="2407" position="7.12856 3.11679 -6.98037" rotation="" gltf-model="Assets/lego_snow_speeder_30384/scene.gltf" scale="0.01 0.01 0.01" animation="property: object3D.position.x; to: -20; dir: alternate; dur: 15000; loop: true"></a-entity>
         <a-entity data-brackets-id="2776" position="-14.31813 4.85305 -12.14073" rotation="0 180 0" gltf-model="Assets/lego_snow_speeder_30384/scene.gltf" scale="0.01 0.01 0.01" animation="property: object3D.position.x; to: 20; dir: alternate; dur: 10000; loop: true"></a-entity>
         <a-entity data-brackets-id="5548" position="9.72796 -0.03371 -20.55343" rotation="0 -90 0" gltf-model="Assets/house_daniel_lego/scene.gltf" scale="0.15 0.15 0.15"></a-entity>
-        <a-entity data-brackets-id="4970" position="6.87024 0.05838 -34.85519" rotation="" gltf-model="Assets/minecraft_world_vr/scene.gltf" scale="0.02 0.02 0.02"></a-entity>
-        <a-entity data-brackets-id="4090" position="0.10278 2.6371 -37.34524" rotation="" gltf-model="Assets/build_-_inktober_5th/scene.gltf" scale="0.001 0.001 0.001" animation="property: rotation; to: 0 360 0; dur: 3500; easing: linear; loop: true; dir: alternate"></a-entity>
-        <a-entity data-brackets-id="4907" position="-2.77682 0 -42.50703" rotation="" gltf-model="Assets/lego_tree/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity data-brackets-id="4970" position="6.87024 0.05838 -37.67073" rotation="" gltf-model="Assets/minecraft_world_vr/scene.gltf" scale="0.02 0.02 0.02"></a-entity>
+        <a-entity data-brackets-id="1570" position="-3.11825 2.10824 -46.67915" rotation="0 259.14167021365955 0" gltf-model="Assets/build_-_inktober_5th/scene.gltf" scale="0.001 0.001 0.001" animation="property: rotation; to: 0 360 0; dur: 3500; easing: linear; loop: true; dir: alternate"></a-entity>
+        <a-entity data-brackets-id="81" position="7.03039 0 -61.77647" rotation="" gltf-model="Assets/lego_tree/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity data-brackets-id="82" position="7.0498 0 -55.01595" rotation="" gltf-model="Assets/lego_tree/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity data-brackets-id="1571" position="-7.44683 0 -62.10713" rotation="" gltf-model="Assets/lego_tree/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+       <a-entity data-brackets-id="1571" position="-7.75277 0 -55.25752" rotation="" gltf-model="Assets/lego_tree/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
         <a-entity data-brackets-id="5747" position="3.47873 0.00179 -1.22215" rotation="0 90 0" gltf-model="Assets/lowpoly_fence_free/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
         <a-entity data-brackets-id="6131" position="-3.49501 0.00179 -1.22215" rotation="0 90 0" gltf-model="Assets/lowpoly_fence_free/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
         <a-entity data-brackets-id="5824" position="3.47873 0.00179 -4.87765" rotation="0 90 0" gltf-model="Assets/lowpoly_fence_free/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
@@ -95,14 +123,23 @@
         <a-entity data-brackets-id="6377" position="-3.51747 0.00179 -12.16338" rotation="0 90 0" gltf-model="Assets/lowpoly_fence_free/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
         <a-entity data-brackets-id="6541" position="-4.20398 0.00179 -15.14652" rotation="0 180 0" gltf-model="Assets/lowpoly_fence_free/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
         <a-entity data-brackets-id="6542" position="-7.85473 0.00179 -15.14353" rotation="0 180 0" gltf-model="Assets/lowpoly_fence_free/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
-        <a-entity data-brackets-id="341" position="-12.22155 -0.30711 -38.90543" rotation="" gltf-model="Assets/9393-_technic-_tractor/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity data-brackets-id="341" position="-11.75067 -0.14227 -49.37561" rotation="" gltf-model="Assets/9393-_technic-_tractor/scene.gltf" scale="0.01 0.01 0.01"></a-entity>
         <a-entity data-brackets-id="606" position="-2.54117 0 -20.57706" rotation="" gltf-model="Assets/sign_post_model/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
         <a-entity data-brackets-id="1084" position="5.92523 0 -16.67756" rotation="0 180 0" gltf-model="Assets/sign_post_model/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity data-brackets-id="1895" position="2.92893 0 -31.51226" rotation="0 270 0" gltf-model="Assets/sign_post_model/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity data-brackets-id="1895" position="-6.45781 0.11638 -32.10517" rotation="" gltf-model="Assets/sign_post_model/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity data-brackets-id="1895" position="-8.36055 0.11638 -44.27463" rotation="0 270 0" gltf-model="Assets/sign_post_model/scene.gltf" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity position="-7.87629 0.09431 -34.3178" rotation="0 270 0" gltf-model="Assets/lego_puppet_walking_around_a_tree/scene.gltf" scale="0.3 0.3 0.3"></a-entity>
         <a-box data-brackets-id="81" position="-2.52601 0.35687 -7.79942" rotation="0 36 0" src="#logo_old" material="" geometry="" scale="0.4 0.4 0.01"></a-box>
         <a-box data-brackets-id="1924" position="2.45621 0.53822 -10.1831" rotation="-24.58 -45 0" src="#logo_old2" material="" geometry="" scale="0.53 0.62 0.01"></a-box>
         <a-box data-brackets-id="3337" position="-0.10887 -1.9937 -3.49318" rotation="" src="Textures/lego_inLego.png" material="" geometry="" scale="4 4 4"></a-box>
         <a-box data-brackets-id="817" position="-2.417 1.61017 -20.8314" rotation="" src="Textures/Lego_man-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
         <a-box data-brackets-id="1271" position="5.85451 1.61017 -16.34949" rotation="" src="Textures/lego_house-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
+        <a-box data-brackets-id="1901" position="3.19653 1.61017 -31.44665" rotation="0 90 0" src="Textures/lego_minecraft-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
+        <a-box data-brackets-id="1901" position="-6.36158 1.6889 -32.44079" rotation="" src="Textures/tree-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
+        <a-box data-brackets-id="1901" position="-8.01598 1.6889 -44.11743" rotation="0 270 0" src="Textures/clever-01.png" material="" geometry="" scale="0.02 0.7 1"></a-box>
         <a-sky src="#sky"></a-sky>
     </a-scene>
-</body></html>
+</body>
+
+</html>
