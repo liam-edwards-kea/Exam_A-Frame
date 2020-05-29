@@ -18,6 +18,7 @@
                 });
             }
         });
+
     </script>
     <script>
         AFRAME.registerComponent('go-stop', {
@@ -35,6 +36,7 @@
                 });
             }
         });
+
     </script>
 </head>
 
@@ -68,6 +70,8 @@
             <img id="logo_old2" src="Textures/1954_lego_logo.jpg">
             <img id="press" src="Textures/press_here-01.png">
             <img id="welcome" src="Textures/Untitled_Artwork.png">
+            <img id="goodbye" src="textures/Untitled_Artwork1.png">
+            <audio id="speech" src="sound/audio_lego.mp3" preload="auto"></audio>
             <video id="dataViz" loop="true" src="video/Lego%20Data%20Vis.mp4"></video>
             <video id="dataViz1" loop="true" src="video/Lego_bar_graph%20copy.mp4"></video>
         </a-assets>
@@ -189,7 +193,18 @@
         <a-box data-brackets-id="6113" position="-2.61779 0.69983 -3.14461" rotation="" material="" geometry="" scale="0.16 1.37 0.19" src="Textures/wood.jpg"></a-box>
         <a-box data-brackets-id="6266" position="-2.639 2.08107 -3.133" rotation="" src="Textures/Untitled_Artwork.png" material="" geometry="" scale="2.32 1.4 0.13"></a-box>
         <a-box data-brackets-id="6572" position="3.00615 0.66271 -60.00641" rotation="" material="" geometry="" scale="0.16 1.37 0.19" src="Textures/wood.jpg"></a-box>
-        <a-box data-brackets-id="6571" position="2.98137 2.54869 -60.07759" rotation="0 -45.89 0" src="Textures/Untitled_Artwork.png" material="" geometry="" scale="3.5 2.4 0.13"></a-box>
+        <a-box data-brackets-id="6571" position="2.98137 2.54869 -60.07759" rotation="0 -45.89 0" src="#goodbye" material="" geometry="" scale="3.5 2.4 0.13"></a-box>
+        <a-box data-brackets-id="2109" position="2.57297 2.27217 -2.9395" rotation="0 -35 0" sound="src: sound/audio_lego.mp3; on: click" src="Textures/audio.png" material="" geometry="" scale="1 1 0.02"></a-box>
+        <a-link data-brackets-id="459" href="http://timidesign.org/kea-exam/" title="" image="" position="-4.69014 1.54217 -63.48895" rotation="-0.05162134802963898 90 3.882514614679189e-19" geometry="primitive: circle; segments: 64" material="shader: portal; side: double" link="" scale="1 1 0.00001">
+            <a-entity text="color: white; align: center; font: kelsonsans; value: http://timidesign.org/kea-exam/; width: 4" position="0 1.5 0"></a-entity>
+            <a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; side: back" rotation="0 180 0" position="" visible="false"></a-entity>
+            <a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; side: back" visible="false"></a-entity>
+            <a-entity text="color: white; align: center; font: kelsonsans; value: http://timidesign.org/kea-exam/; width: 4" position="0 1.5 0"></a-entity>
+            <a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; side: back" rotation="0 180 0" position="" visible="false"></a-entity>
+            <a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; side: back" visible="false"></a-entity>
+        </a-link>
         <a-sky src="#sky"></a-sky>
     </a-scene>
-</body></html>
+</body>
+
+</html>
